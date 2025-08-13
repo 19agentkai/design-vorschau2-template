@@ -1,6 +1,7 @@
 import React from 'react';
 import { Car, Phone, Mail, MapPin } from 'lucide-react';
-import { Text, Tel, Mail as MailLink, getConfig } from '../lib/bind';
+import { Text, Tel, Mail as MailLink } from '../lib/bind';
+import { getConfig } from '../lib/config';
 
 const Footer = () => {
   const config = getConfig();
