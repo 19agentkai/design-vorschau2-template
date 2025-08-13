@@ -31,7 +31,7 @@ window.CONFIG = {
   HERO_BACKGROUND: "https://i.postimg.cc/SKcn3kbD/Whats-App-Image-2025-08-12-at-13-52-31-1.jpg",
   
   // Services Section
-  SERVICES_HEADLINE: "IHR SPEZIALIST RUND UM",
+  SERVICES_HEADLINE: "test",
   SERVICES_SUBHEADLINE: "DIE FAHRZEUG - FOLIERUNG",
   SERVICES_DESCRIPTION: "Seit über 10 Jahren bringen wir Fahrzeuge in Bestform – von der Lackaufbereitung über Leasingrückläufer bis zur Oldtimerpflege. Perfekter Glanz und langanhaltender Schutz sind unser Anspruch.",
   
