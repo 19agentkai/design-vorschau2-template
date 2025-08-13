@@ -32,7 +32,7 @@ window.CONFIG = {
   
   // Services Section
   SERVICES_HEADLINE: "test",
-  SERVICES_SUBHEADLINE: "DIE FAHRZEUG - FOLIERUNG",
+  SERVICES_SUBHEADLINE: "test",
   SERVICES_DESCRIPTION: "Seit über 10 Jahren bringen wir Fahrzeuge in Bestform – von der Lackaufbereitung über Leasingrückläufer bis zur Oldtimerpflege. Perfekter Glanz und langanhaltender Schutz sind unser Anspruch.",
   
   // Main Service Categories
