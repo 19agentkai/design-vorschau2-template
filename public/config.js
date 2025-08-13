@@ -4,15 +4,15 @@ window.CONFIG = {
   CLIENT_NAME: "CLIENT_NAME",
   BUSINESS_NAME: "BUSINESS_NAME",
   CITY: "CITY",
-  PHONE: "0176 64056418",
-  EMAIL: "vad-lit@web.de",
+  PHONE: "99999",
+  EMAIL: "email@example.com",
   WHATSAPP: "4917664056418",
   
   // Address
   ADDRESS: {
-    STREET: "Pennigbütteler Str. 34",
-    POSTAL_CODE: "28239",
-    CITY: "Bremen",
+    STREET: "Street",
+    POSTAL_CODE: "11111",
+    CITY: "City",
     COUNTRY: "DE"
   },
   
@@ -20,8 +20,8 @@ window.CONFIG = {
   OPENING_HOURS: "Mo-Sa 08:00-18:00",
   
   // SEO
-  SITE_TITLE: "Autopflege Bremen – Fahrzeugaufbereitung & Keramikversiegelung | Vadim Hergert",
-  SITE_DESCRIPTION: "Professionelle Autoaufbereitung in Bremen: Innenraum, Politur, Keramik, Scheinwerferaufbereitung u.v.m. Termin anfragen: 0176 64056418.",
+  SITE_TITLE: "SITE_TITLE",
+  SITE_DESCRIPTION: "SITE_DESCRIPTION",
   
   // Hero Section
   HERO_HEADLINE: "DEIN AUTO",
