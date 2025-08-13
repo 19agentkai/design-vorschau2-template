@@ -24,7 +24,7 @@ window.CONFIG = {
   SITE_DESCRIPTION: "SITE_DESCRIPTION",
   
   // Hero Section
-  HERO_HEADLINE: "DEIN AUTO",
+  HERO_HEADLINE: "test",
   HERO_SUBHEADLINE: "test",
   HERO_TAGLINE: "test",
   HERO_CTA_TEXT: "Jetzt Termin sichern",
