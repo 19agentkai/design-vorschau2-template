@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Car, Menu, X, Phone } from 'lucide-react';
+import { Text } from '../lib/bind';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,8 +39,7 @@ const Header = () => {
           <div className="flex items-center space-x-2">
             <Car className={`h-8 w-8 ${isScrolled ? 'text-blue-700' : 'text-white'}`} />
             <div className={`text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-              <div>Autopflege &</div>
-              <div className="text-sm font-medium">Fahrzeugaufbereitung</div>
+              <div><Text k="BUSINESS_NAME" /></div>
             </div>
           </div>
 

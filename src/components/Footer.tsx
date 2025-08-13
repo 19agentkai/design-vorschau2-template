@@ -1,7 +1,10 @@
 import React from 'react';
 import { Car, Phone, Mail, MapPin } from 'lucide-react';
+import { Text, Tel, Mail as MailLink, getConfig } from '../lib/bind';
 
 const Footer = () => {
+  const config = getConfig();
+  
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -12,19 +15,17 @@ const Footer = () => {
             <div className="flex items-center space-x-2 mb-4">
               <Car className="h-8 w-8 text-blue-400" />
               <div className="text-xl font-bold">
-                <div>Autopflege &</div>
-                <div className="text-sm font-medium">Fahrzeugaufbereitung</div>
+                <div><Text k="BUSINESS_NAME" /></div>
               </div>
             </div>
             <p className="text-gray-300 mb-4">
-              <strong>Inhaber: Vadim Hergert</strong>
+              <strong>Inhaber: <Text k="CLIENT_NAME" /></strong>
             </p>
             <p className="text-gray-400 mb-6 max-w-md">
-              Professionelle Autopflege und Fahrzeugaufbereitung in Bremen. 
-              Von der Grundreinigung bis zur Premium-Keramikversiegelung.
+              <Text k="FOOTER_DESCRIPTION" />
             </p>
             <p className="text-sm text-gray-500">
-              Hinweis: Gemäß § 19 Abs. 1 UStG wird keine Umsatzsteuer ausgewiesen.
+              <Text k="FOOTER_TAX_NOTE" />
             </p>
           </div>
 
@@ -35,21 +36,17 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-blue-400 flex-shrink-0" />
                 <div className="text-sm text-gray-300">
-                  Pennigbütteler Str. 34<br />
-                  28239 Bremen
+                  {config.ADDRESS?.STREET}<br />
+                  {config.ADDRESS?.POSTAL_CODE} {config.ADDRESS?.CITY}
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-blue-400 flex-shrink-0" />
-                <a href="tel:017664056418" className="text-sm text-gray-300 hover:text-white">
-                  0176 64056418
-                </a>
+                <Tel k="PHONE" className="text-sm text-gray-300 hover:text-white" />
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-blue-400 flex-shrink-0" />
-                <a href="mailto:vad-lit@web.de" className="text-sm text-gray-300 hover:text-white">
-                  vad-lit@web.de
-                </a>
+                <MailLink k="EMAIL" className="text-sm text-gray-300 hover:text-white" />
               </div>
             </div>
           </div>
@@ -72,7 +69,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
-              © 2025 Autopflege & Fahrzeugaufbereitung – Vadim Hergert. Alle Rechte vorbehalten.
+              © 2025 <Text k="BUSINESS_NAME" /> – <Text k="CLIENT_NAME" />. Alle Rechte vorbehalten.
             </div>
             <div className="flex space-x-6 text-sm">
               <button className="text-gray-400 hover:text-white transition-colors">

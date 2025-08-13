@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Phone, MessageCircle } from 'lucide-react';
+import { Text, Img, WhatsApp } from '../lib/bind';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -17,7 +18,10 @@ const Hero = () => {
   }, []);
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/4917664056418?text=Hallo,%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Autopflege-Services.', '_blank');
+    const config = window.CONFIG;
+    if (config?.WHATSAPP) {
+      window.open(`https://wa.me/${config.WHATSAPP}?text=Hallo,%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Autopflege-Services.`, '_blank');
+    }
   };
 
   return (
@@ -26,13 +30,13 @@ const Hero = () => {
       <div
         ref={heroRef}
         className="absolute inset-0 w-full h-[120%] transition-transform duration-75"
-        style={{
-          backgroundImage: 'url(https://i.postimg.cc/SKcn3kbD/Whats-App-Image-2025-08-12-at-13-52-31-1.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
+      >
+        <Img 
+          k="HERO_BACKGROUND" 
+          alt="Hero Background"
+          className="w-full h-full object-cover"
+        />
+      </div>
       
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-70" />
@@ -43,11 +47,13 @@ const Hero = () => {
           <div className="animate-fade-in-up opacity-0 animate-delay-300">
            
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-6 sm:mb-8 leading-tight sm:leading-none tracking-tight transform hover:scale-105 transition-transform duration-500">
-              DEIN AUTO<br />
-              <span className="text-blue-500 animate-pulse text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">IN BESTFORM</span>
+              <Text k="HERO_HEADLINE" /><br />
+              <span className="text-blue-500 animate-pulse text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+                <Text k="HERO_SUBHEADLINE" />
+              </span>
             </h1>
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-200 mb-10 sm:mb-16 font-light max-w-4xl mx-auto opacity-0 animate-fade-in-up animate-delay-600 px-4">
-              Autopflege in Bremen – Präzision & Keramik
+              <Text k="HERO_TAGLINE" />
             </h2>
             
             {/* CTA Button */}
@@ -57,7 +63,7 @@ const Hero = () => {
                 className="group bg-blue-600 hover:bg-blue-700 text-white px-8 sm:px-12 py-4 sm:py-5 font-bold text-lg sm:text-xl transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/25 flex items-center justify-center gap-4 animate-bounce-subtle rounded-lg"
               >
                 <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12" />
-                Jetzt Termin sichern
+                <Text k="HERO_CTA_TEXT" />
               </button>
             </div>
 

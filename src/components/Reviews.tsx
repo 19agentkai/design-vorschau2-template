@@ -1,47 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { Star } from 'lucide-react';
+import { Text, ReviewsSlider } from '../lib/bind';
 
 const Reviews = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
-
-  const reviews = [
-    {
-      name: 'Michael K.',
-      rating: 5,
-      text: 'Absolut professionelle Arbeit! Mein BMW sieht aus wie neu. Vadim arbeitet sehr sorgfältig und pünktlich.',
-      service: 'Lackaufbereitung'
-    },
-    {
-      name: 'Sandra M.',
-      rating: 5,
-      text: 'Bin begeistert von der Innenraumreinigung. Jedes Detail wurde perfekt gemacht. Sehr empfehlenswert!',
-      service: 'Innenraumreinigung'
-    },
-    {
-      name: 'Thomas R.',
-      rating: 5,
-      text: 'Die Keramikversiegelung ist ihr Geld wert. Das Auto glänzt nach Monaten immer noch wie am ersten Tag.',
-      service: 'Keramik Coating'
-    },
-    {
-      name: 'Julia H.',
-      rating: 5,
-      text: 'Sehr freundlich und kompetent. Die Geruchsbeseitigung hat perfekt funktioniert. Vielen Dank!',
-      service: 'Geruchsbeseitigung'
-    },
-    {
-      name: 'Robert S.',
-      rating: 5,
-      text: 'Top Service für meinen Oldtimer. Vadim versteht sein Handwerk und behandelt jedes Auto wie sein eigenes.',
-      service: 'Oldtimerpflege'
-    },
-    {
-      name: 'Marina L.',
-      rating: 5,
-      text: 'Faire Preise und ausgezeichnete Qualität. Die Aufbereitung für die Leasingrückgabe war perfekt.',
-      service: 'Leasingrückläufer'
-    }
-  ];
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
@@ -73,34 +35,8 @@ const Reviews = () => {
 
         {/* Scrolling Reviews */}
         <div className="overflow-hidden">
-          <div
-            ref={scrollRef}
-            className="flex space-x-6 animate-scroll"
-            style={{ width: 'calc(200% + 24px)' }}
-          >
-            {[...reviews, ...reviews].map((review, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-80 bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20 rounded-xl p-6"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="flex space-x-1">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <span className="ml-2 text-blue-400 text-sm font-medium">
-                    {review.service}
-                  </span>
-                </div>
-                <p className="text-gray-200 mb-4 leading-relaxed">
-                  "{review.text}"
-                </p>
-                <div className="font-semibold text-white">
-                  {review.name}
-                </div>
-              </div>
-            ))}
+          <div ref={scrollRef}>
+            <ReviewsSlider />
           </div>
         </div>
 

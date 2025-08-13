@@ -1,41 +1,11 @@
 import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Text, getConfig } from '../lib/bind';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-
-  const images = [
-    {
-      src: 'https://i.postimg.cc/wj7fhbY6/d2e4ca96-94d8-48ba-b91f-fef3981ae700.avif',
-      title: 'Hochglanzpolitur',
-      category: 'Lackaufbereitung'
-    },
-    {
-      src: 'https://i.postimg.cc/G21XnL82/fe452e31-eaee-45ac-baf4-8498e7729893.avif',
-      title: 'Innenraumaufbereitung',
-      category: 'Interior'
-    },
-    {
-      src: 'https://i.postimg.cc/g2QM4qG3/e7cf8a9f-e8c6-45f2-b941-d16186afda69.avif',
-      title: 'Keramikversiegelung',
-      category: 'Beschichtung'
-    },
-    {
-      src: 'https://i.postimg.cc/kMvp9byd/ceac01fb-fea6-4efd-b6d3-5e2daaffd286.avif',
-      title: 'Felgenaufbereitung',
-      category: 'Räder'
-    },
-    {
-      src: 'https://i.postimg.cc/W4Z5yF4C/dff8f3e0-aab7-47c6-952b-65e4de2f008f.avif',
-      title: 'Motorreinigung',
-      category: 'Motor'
-    },
-    {
-      src: 'https://i.postimg.cc/1tpY8nhw/ac9614d9-bc3b-46ff-90c9-c533763304d4.avif',
-      title: 'Scheinwerferaufbereitung',
-      category: 'Optik'
-    }
-  ];
+  const config = getConfig();
+  const images = config.GALLERY_IMAGES || [];
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);

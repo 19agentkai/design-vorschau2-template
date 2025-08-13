@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, MessageCircle, Mail, Send, MapPin, Clock, Car, Shield, Gem, Sparkles, Eye, Star } from 'lucide-react';
+import { Text, Tel, Mail as MailLink, WhatsApp, Img, getConfig } from '../lib/bind';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,17 +14,24 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const config = getConfig();
     const subject = `Terminanfrage von ${formData.name}`;
     const body = `Name: ${formData.name}\nTelefon: ${formData.phone}\nE-Mail: ${formData.email}\nFahrzeug: ${formData.vehicle}\n\nNachricht:\n${formData.message}`;
-    window.location.href = `mailto:vad-lit@web.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${config.FORM_ENDPOINT}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/4917664056418?text=Hallo,%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Autopflege-Services.', '_blank');
+    const config = getConfig();
+    if (config?.WHATSAPP) {
+      window.open(`https://wa.me/${config.WHATSAPP}?text=Hallo,%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20Autopflege-Services.`, '_blank');
+    }
   };
 
   const handleCall = () => {
-    window.location.href = 'tel:017664056418';
+    const config = getConfig();
+    if (config?.PHONE) {
+      window.location.href = `tel:${config.PHONE}`;
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -41,11 +49,10 @@ const Contact = () => {
         
         {/* Left Side - CTA with Car Image */}
         <div className="relative overflow-hidden">
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: 'url(https://i.postimg.cc/K8Mj3xjx/Whats-App-Image-2025-08-12-at-13-52-33-1.jpg)'
-            }}
+          <Img 
+            k="CONTACT_LEFT_IMAGE" 
+            alt="Contact Left Background"
+            className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black bg-opacity-40" />
           
@@ -53,7 +60,7 @@ const Contact = () => {
             
             
             <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-8 leading-tight transform hover:scale-105 transition-transform duration-500">
-              ERHALTE EIN ANGEBOT
+              <Text k="CONTACT_CTA_LEFT" />
             </h2>
             
             <div className="space-y-6 mb-12 opacity-0 animate-fade-in-up animate-delay-300">
@@ -88,11 +95,10 @@ const Contact = () => {
 
         {/* Right Side - Services Overview */}
         <div className="relative overflow-hidden">
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: 'url(https://i.postimg.cc/HL1xQR85/Whats-App-Image-2025-08-12-at-13-52-34.jpg)'
-            }}
+          <Img 
+            k="CONTACT_RIGHT_IMAGE" 
+            alt="Contact Right Background"
+            className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gray-900 bg-opacity-50" />
           
@@ -100,7 +106,7 @@ const Contact = () => {
             
             
             <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-8 leading-tight transform hover:scale-105 transition-transform duration-500">
-              UNSERE LEISTUNGEN FÜR SIE
+              <Text k="CONTACT_CTA_RIGHT" />
             </h2>
             
             <div className="space-y-4 mb-12 opacity-0 animate-fade-in-up animate-delay-300">
@@ -170,11 +176,10 @@ const Contact = () => {
             {/* Left Side - CTA Content */}
             <div className="text-white">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 transform hover:scale-105 transition-transform duration-500 leading-tight">
-                Jetzt Termin <span className="text-blue-400 animate-pulse">sichern</span>
+                <Text k="CONTACT_HEADLINE" /> <span className="text-blue-400 animate-pulse"><Text k="CONTACT_SUBHEADLINE" /></span>
               </h2>
               <p className="text-xl text-gray-300 mb-8 opacity-0 animate-fade-in-up animate-delay-300 leading-relaxed">
-                Lassen Sie Ihr Fahrzeug von einem Profi behandeln. 
-                Schnelle Termine, faire Preise und erstklassige Ergebnisse.
+                <Text k="CONTACT_DESCRIPTION" />
               </p>
 
               {/* Benefits */}
@@ -213,7 +218,7 @@ const Contact = () => {
                   className="group flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/25"
                 >
                   <Phone className="h-5 w-5 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12" />
-                  0176 64056418
+                  <Tel k="PHONE" />
                 </button>
               </div>
             </div>
