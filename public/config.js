@@ -1,7 +1,7 @@
 // Single-file configuration for client customization
 window.CONFIG = {
   // Client Information
-  CLIENT_NAME: "Vadim Hergert",
+  CLIENT_NAME: "CLIENT_NAME",
   BUSINESS_NAME: "Autopflege & Fahrzeugaufbereitung",
   CITY: "Bremen",
   PHONE: "0176 64056418",
