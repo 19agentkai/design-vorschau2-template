@@ -2,8 +2,8 @@
 window.CONFIG = {
   // Client Information
   CLIENT_NAME: "CLIENT_NAME",
-  BUSINESS_NAME: "Autopflege & Fahrzeugaufbereitung",
-  CITY: "Bremen",
+  BUSINESS_NAME: "BUSINESS_NAME",
+  CITY: "CITY",
   PHONE: "0176 64056418",
   EMAIL: "vad-lit@web.de",
   WHATSAPP: "4917664056418",
