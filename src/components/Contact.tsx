@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, MessageCircle, Mail, Send, MapPin, Clock, Car, Shield, Gem, Sparkles, Eye, Star } from 'lucide-react';
-import { Text, Tel, Mail as MailLink, WhatsApp, Img, getConfig } from '../lib/bind';
+import { Text, Tel, Mail as MailLink, WhatsApp, Img } from '../lib/bind';
+import { getConfig } from '../lib/config';
 
 const Contact = () => {
   const [formData, setFormData] = useState({

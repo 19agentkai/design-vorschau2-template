@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Text, getConfig } from '../lib/bind';
+import { Text } from '../lib/bind';
+import { getConfig } from '../lib/config';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
