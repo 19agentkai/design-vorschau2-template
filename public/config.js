@@ -27,7 +27,7 @@ window.CONFIG = {
   HERO_HEADLINE: "test",
   HERO_SUBHEADLINE: "test",
   HERO_TAGLINE: "test",
-  HERO_CTA_TEXT: "Jetzt Termin sichern",
+  HERO_CTA_TEXT: "test",
   HERO_BACKGROUND: "https://i.postimg.cc/SKcn3kbD/Whats-App-Image-2025-08-12-at-13-52-31-1.jpg",
   
   // Services Section
